@@ -1,0 +1,20 @@
+/**
+ * @file manifest.json
+ * @module frontend/public
+ * @description Instructions for PWA Web App Manifest.
+ *
+ * FIELDS TO INCLUDE:
+ * - name: "TourOS - Dynamic Tour Platform"
+ * - short_name: "TourOS"
+ * - description: "Personalized Dynamic Tour Planning & Operations Platform"
+ * - start_url: "/"
+ * - display: "standalone"
+ * - theme_color: "#0B6E6E" (matches --color-primary)
+ * - background_color: "#F7F8FA"
+ * - icons: 192x192 and 512x512 PNG variants
+ *
+ * OFFLINE STRATEGY:
+ * - Service Worker must cache: last known itinerary, booking vouchers, emergency contacts.
+ * - Cache strategy: Network-first for API calls, Cache-fallback for offline.
+ * - Show offline banner when connectivity is unavailable.
+ */

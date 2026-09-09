@@ -1,0 +1,34 @@
+/**
+ * @file global.css
+ * @module frontend/src/styles
+ * @description Instructions for Global CSS Styles and Design Tokens.
+ *
+ * DESIGN SYSTEM TO IMPLEMENT:
+ *
+ * 1. CSS Custom Properties (variables):
+ *    --color-primary: Deep ocean teal (#0B6E6E or similar)
+ *    --color-accent: Warm amber (#F5A623)
+ *    --color-danger: Alert red (#E53E3E)
+ *    --color-success: Forest green (#38A169)
+ *    --color-background: Off-white (#F7F8FA)
+ *    --color-surface: White (#FFFFFF)
+ *    --color-text-primary: Charcoal (#1A202C)
+ *    --color-text-secondary: Slate (#718096)
+ *    --color-disruption: Alert orange (#DD6B20)
+ *
+ * 2. Typography:
+ *    - Font family: 'Inter', sans-serif (load from Google Fonts)
+ *    - Font scale: 12px / 14px / 16px / 20px / 24px / 32px
+ *
+ * 3. Spacing Scale (rem): 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px
+ *
+ * 4. Border Radius: small (4px), medium (8px), large (16px), pill (9999px)
+ *
+ * 5. Shadow Scale:
+ *    --shadow-card: 0 2px 8px rgba(0,0,0,0.08)
+ *    --shadow-modal: 0 8px 32px rgba(0,0,0,0.16)
+ *
+ * 6. Disruption Color:
+ *    - Any component showing an active disruption must use --color-disruption
+ *      and have a pulsing animation indicator.
+ */

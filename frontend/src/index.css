@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root, [data-theme="light"] {
+  color-scheme: light;
+  --color-primary: #0B6E6E;
+  --color-primary-light: #E6F4F4;
+  --color-primary-hover: #085555;
+  --color-accent: #F5A623;
+  --color-danger: #E53E3E;
+  --color-success: #38A169;
+  --color-background: #F8F9FB;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F8F9FB;
+  --color-surface-subtle: #EDF0F5;
+  --color-text-primary: #1A202C;
+  --color-text-secondary: #718096;
+  --color-text-tertiary: #A0AEC0;
+  --color-border: #E2E8F0;
+  --color-disruption: #DD6B20;
+
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-modal: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+}
+
+.dark, [data-theme="dark"] {
+  color-scheme: dark;
+  --color-primary: #14A5A5;
+  --color-primary-light: rgba(20, 165, 165, 0.18);
+  --color-primary-hover: #17B8B8;
+  --color-accent: #F5A623;
+  --color-danger: #F87171;
+  --color-success: #34D399;
+  --color-background: #0F1417;
+  --color-surface: #1A2226;
+  --color-surface-muted: #11171A;
+  --color-surface-subtle: #162025;
+  --color-text-primary: #E8EAEC;
+  --color-text-secondary: #9AA5AA;
+  --color-text-tertiary: #6C787E;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-disruption: #DD6B20;
+
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-modal: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
+}
+
+html.dark, html[data-theme="dark"],
+body.dark, body[data-theme="dark"] {
+  background-color: #0F1417 !important;
+  color: #E8EAEC !important;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* Fallback color transformations for dark mode */
+.dark .bg-white,
+[data-theme="dark"] .bg-white {
+  background-color: #1A2226 !important;
+}
+
+.dark .bg-gray-50,
+.dark .bg-gray-100,
+[data-theme="dark"] .bg-gray-50,
+[data-theme="dark"] .bg-gray-100 {
+  background-color: #141B1F !important;
+}
+
+.dark .border-gray-200,
+.dark .border-gray-100,
+.dark .border-gray-300,
+[data-theme="dark"] .border-gray-200,
+[data-theme="dark"] .border-gray-100,
+[data-theme="dark"] .border-gray-300 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .text-gray-700,
+.dark .text-gray-800,
+.dark .text-gray-900,
+[data-theme="dark"] .text-gray-700,
+[data-theme="dark"] .text-gray-800,
+[data-theme="dark"] .text-gray-900 {
+  color: #E8EAEC !important;
+}
+
+.dark .text-gray-500,
+.dark .text-gray-600,
+[data-theme="dark"] .text-gray-500,
+[data-theme="dark"] .text-gray-600 {
+  color: #9AA5AA !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb,
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #334149;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+.dark ::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #4A5B64;
+}
+
+/* Pulsing disruption badge */
+@keyframes pulse-disruption {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(221, 107, 32, 0.7);
+  }
+  50% {
+    opacity: 0.92;
+    transform: scale(1.015);
+    box-shadow: 0 0 0 10px rgba(221, 107, 32, 0);
+  }
+}
+
+.disruption-pulse {
+  animation: pulse-disruption 2s infinite ease-in-out;
+}
+
+/* Hero subtle gradient mesh */
+.hero-glow-light {
+  background: radial-gradient(circle at 50% 0%, rgba(11, 110, 110, 0.08) 0%, rgba(245, 166, 35, 0.04) 50%, transparent 80%);
+}
+
+.hero-glow-dark {
+  background: radial-gradient(circle at 50% 0%, rgba(20, 165, 165, 0.12) 0%, rgba(245, 166, 35, 0.05) 50%, transparent 80%);
+}

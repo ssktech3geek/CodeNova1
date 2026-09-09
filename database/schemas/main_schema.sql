@@ -1,0 +1,40 @@
+-- ===========================================================================
+-- File: main_schema.sql
+-- Module: database/schemas
+-- Description: Canonical schema documentation linking all tables and relationships.
+-- ===========================================================================
+--
+-- INSTRUCTIONS (no SQL code):
+-- This file documents the complete relational schema as the single source of truth.
+-- It references all tables created across migrations 001–004.
+--
+-- ENTITY RELATIONSHIP SUMMARY:
+--
+-- users (1) ──────────── (1) traveler_profiles
+-- users (1) ──────────── (1) operators
+-- users (1) ──────────── (1) vendors
+--
+-- operators (1) ─────── (M) itineraries
+-- traveler_profiles (1) ─ (M) itineraries
+--
+-- itineraries (1) ──── (M) itinerary_items
+-- itineraries (1) ──── (M) bookings
+-- itineraries (1) ──── (M) change_events
+-- itineraries (1) ──── (M) payments
+--
+-- itinerary_items (M) ── (M) itinerary_items   [dependency graph: JSONB]
+-- itinerary_items (1) ── (1) bookings
+--
+-- change_events (1) ─── (M) change_proposals
+-- change_proposals (1) ─ creates → new itinerary version on approval
+--
+-- vendors (1) ─────── (M) hotels
+-- vendors (1) ─────── (M) experiences
+-- vendors (1) ─────── (M) transports
+-- vendors (1) ─────── (M) bookings
+--
+-- INDEXING STRATEGY:
+-- - All foreign keys must be indexed.
+-- - Composite index: (itinerary_id + status) on bookings table.
+-- - Partial index: itinerary_items WHERE is_disrupted = true.
+-- - Text search index on: destinations.name, experiences.title, hotels.name.
